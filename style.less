@@ -1,0 +1,133 @@
+@pentagon_width: 19vw;
+@hexagon_width: 12vw;
+@triangle_width: 13vw;
+@parallelogram_left_width: 18vw;
+@parallelogram_middle_width: 15vw;
+@parallelogram_right_width: 20vw;
+@parallelogram_polygon: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+@circle_width: 30vw;
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 2vw;
+}
+.textblock{
+  margin: 8% 8% 0;
+}
+.logo{
+  font-size: 250%;
+  margin-bottom: 8%;
+}
+.logo span{
+  color: red;
+}
+.title{
+  font-size: 400%;
+  margin-bottom: 6%;
+}
+.subtitle{
+  font-size: 235%;
+  margin-bottom: 8%;
+}
+.text{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6%;
+}
+.text ul{
+  padding-inline-start: 1em;
+}
+.left{
+  width: 54%;
+}
+.right{
+  width: 43%;
+}
+.subtext{
+  margin-bottom: 15%;
+}
+.figures{
+  height: 35vw;
+  overflow: hidden;
+  float: left;
+}
+
+.position() {
+  position: relative;
+  float: left;
+}
+
+.hexagon, .triangle, .pentagon {
+  background-color: #E41F13;
+}
+
+.parallelogram_left, .circle, .parallelogram_right {
+  background-color: #FED002;
+}
+.parallelogram_left, .parallelogram_middle, .parallelogram_right{
+  clip-path: @parallelogram_polygon;
+}
+
+.figures > * {
+  .position;
+}
+
+.parallelogram_left {
+  height: calc(@parallelogram_left_width * 1.08);
+  width: @parallelogram_left_width;
+  transform: rotate(33deg);
+  left: -8vw;
+  top: 7vw;
+}
+
+.hexagon {
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  height: calc(@hexagon_width * 0.87);
+  width: @hexagon_width;
+  transform: rotate(10deg);
+  left: -10vw;
+  top: 18vw;
+}
+
+.parallelogram_middle {
+  background: #000000;
+  height: calc(@parallelogram_middle_width * 1.10);
+  width: @parallelogram_middle_width;
+  left: -10vw;
+  top: 15vw;
+}
+
+.triangle {
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  height: calc(@triangle_width * 0.86);
+  width: @triangle_width;
+  transform: rotate(91deg);
+  left: -21vw;
+  top: 3vw;
+}
+
+.circle {
+  clip-path: circle(50% at 50% 50%);
+  height: @circle_width;
+  width: @circle_width;
+  left: -23vw;
+}
+
+.pentagon {
+  clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+  height: calc(@pentagon_width * 0.97);
+  width: @pentagon_width;
+  transform-origin: 50% 55%;
+  transform: rotate(42deg);
+  left: 64vw;
+  top: -21vw;
+
+}
+
+.parallelogram_right {
+  height: calc(@parallelogram_right_width * 0.42);
+  width: @parallelogram_right_width;
+  transform: rotate(33deg);
+  left: 64vw;
+  top: -11vw;
+}
